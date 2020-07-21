@@ -1,3 +1,8 @@
+package app;
+
+import data.Passenger;
+import data.Ticket;
+
 public class TicketController {
     public static void main(String[] args) {
         Ticket ticket = new Ticket(40);

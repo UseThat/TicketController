@@ -1,3 +1,5 @@
+package data;
+
 import java.time.LocalDateTime;
 
 public class Ticket {
@@ -17,6 +19,10 @@ public class Ticket {
 
     private void setTicketTime(LocalDateTime ticketBuyTime, int validityTime){
         ticketValidityTime = ticketBuyTime.plusMinutes(validityTime);
+    }
+
+    private void changeValidityTime(){
+        ticketValidityTime = ticketBuyTime.minusDays(1);
     }
 
     //Getter and setter
@@ -47,7 +53,7 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
+        return "data.Ticket{" +
                 "ticketBuyTime=" + ticketBuyTime +
                 ", validityTime=" + validityTime +
                 ", ticketValidityTime=" + ticketValidityTime +
