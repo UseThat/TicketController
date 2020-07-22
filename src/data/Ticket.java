@@ -21,7 +21,7 @@ public class Ticket {
         ticketValidityTime = ticketBuyTime.plusMinutes(validityTime);
     }
 
-    private void changeValidityTime(){
+    public void changeValidityTime(){
         ticketValidityTime = ticketBuyTime.minusDays(1);
     }
 

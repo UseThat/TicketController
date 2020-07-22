@@ -4,13 +4,25 @@ import data.Passenger;
 import data.Ticket;
 import data.TicketMachine;
 
+import java.util.ArrayList;
+
 public class TicketController {
     public static void main(String[] args) {
-        Ticket ticket = new Ticket(40);
-        Passenger passenger = new Passenger("Mateusz","WYgoda");
-        System.out.println(passenger);
-        TicketMachine.buyTicket(passenger,5);
-        System.out.println(passenger);
-        System.out.println(ticket);
+
+        ArrayList<Passenger> passengerArrayList = new ArrayList<>();
+        for(int i = 0; i<10;i++){
+            passengerArrayList.add(new Passenger("Mateusz"+i,"Testowy"+i));
+            TicketMachine.buyTicket(passengerArrayList.get(i),i);
+            if(i%2==0){
+                passengerArrayList.get(i).getTicket().changeValidityTime();
+            }
+        }
+
+
+        System.out.println(passengerArrayList.toString());
+
+
     }
+
+
 }
